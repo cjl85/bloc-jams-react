@@ -33,12 +33,10 @@
           </colgroup>
           <tbody>
           this.state.album.songs.map((song, index) => {
-
-              <tr> key='title'{index + 1}</tr>
-              <td> {song.title} </td>
-              <tr> key='duration'{index}</tr>
-              <td> {song.duration} </td>
-
+            return <tr>
+                <td> key='title'={index + 1} {song.title} </td>
+                <td> key='duration'={index + 1} {song.duration} </td>
+              </tr>
           })
           </tbody>
         </table>
