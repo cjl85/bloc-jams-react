@@ -32,12 +32,12 @@
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
-          this.state.album.songs.map((song, index) => {
-            return <tr>
+          {this.state.album.songs.map((song, index) =>
+              <tr>
                 <td> key='title'={index + 1} {song.title} </td>
                 <td> key='duration'={index + 1} {song.duration} </td>
               </tr>
-          })
+          )}
           </tbody>
         </table>
        </section>
