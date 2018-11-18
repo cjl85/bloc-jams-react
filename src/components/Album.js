@@ -44,13 +44,13 @@ class Album extends Component {
     }
   }
 
-  isHovered(index) {
-    this.setState({isMouseEnter: index })
+  isHovered(song) {
+    this.setState({isMouseEnter: song })
   };
 
 
-  isNotHovered() {
-    this.setState({isMouseLeave: false})
+  isNotHovered(song) {
+    this.setState({isMouseLeave: null})
   };
 
 
@@ -77,16 +77,16 @@ class Album extends Component {
         <tr className="song"
           key={index}
             onClick={() => this.handleSongClick(song)}
-              onMouseEnter={() => this.isHovered(index)}
-               onMouseLeave = {() => this.isNotHovered()}>
+              onMouseEnter={() => this.isHovered(song)}
+                onMouseLeave = {() => this.isNotHovered(song)}>
         <td>
-        {(this.state.isHovered === index) ? (<span className="ion-md-play"></span>) :
+        {(this.state.isHovered === song) ? (<span className="ion-md-play"></span>) :
          (this.state.isPlaying === true && this.state.currentSong === song) ? (<span className="ion-md-pause"></span>) :
-         (this.state.isPlaying !== true && this.state.currentSong === song) ? (<span className="ion-md-play"></span>) :
+         (this.state.isPlaying !== true && this.state.currentSong === song) ? (<span className="ion-md-play"></span>) : null }
         </td>
-        <td key='number' > {index + 1}  </td>
-        <td key='title' > {song.title} </td>
-        <td key='duration'> {song.duration} </td>
+        <td key='number'   > {index + 1}  </td>
+        <td key='title'    > {song.title} </td>
+        <td key='duration' > {song.duration} </td>
 
         </tr>
       )}
