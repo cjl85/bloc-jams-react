@@ -44,16 +44,24 @@ class Album extends Component {
     }
   }
 
-  hoverOn(song) {
-    this.setState({isMouseEnter: song })
+
+  displayIcon(song, index) {
+    if(this.state.isPlaying !== true && this.state.hoveredSong === index ) {
+        return <span className="ion-md-play"></span>
+    }
+    return index + 1
+  }
+
+
+  hoverOn(index) {
+    this.setState({ hoveredSong: index });
+    console.log('hovered');
+
   };
 
-
-  hoverOff(song) {
-    this.setState({isMouseLeave: null})
+  hoverOff() {
+    this.setState({ hoveredSong: false })
   };
-
-
 
   render() {
     return (
@@ -66,28 +74,23 @@ class Album extends Component {
       <div id="release-info">{this.state.album.releaseInfo}</div>
       </div>
       </section>
-      <table id="song-list">
-      <colgroup>
-      <col id="song-number-column" />
-      <col id="song-title-column" />
-      <col id="song-duration-column" />
+       <table id="song-list">
+
+       <colgroup>
+        <col id="song-number-column" />
+        <col id="song-title-column" />
+        <col id="song-duration-column" />
       </colgroup>
+
       <tbody>
       {this.state.album.songs.map((song, index) =>
-        <tr className="song"
-          key={index}
-            onClick={() => this.handleSongClick(song)}
-              onMouseEnter={() => this.hoverOn(song)}
-                onMouseLeave = {() => this.hoverOff(song)}>
-        <td>
-        if{(this.state.hoverOn === song)} {
-              {return <span className = "ion-md-play"></span>)};
-        }}
-        // {(this.state.hoverOn === song) ? (<span className="ion-md-play"></span>) :
-        //  (this.state.isPlaying === true && this.state.currentSong === song) ? (<span className="ion-md-pause"></span>) :
-        //  (this.state.isPlaying !== true && this.state.currentSong === song) ? (<span className="ion-md-play"></span>) : null }
-        </td>
-        <td key='number'   > {index + 1}  </td>
+        <tr className = "song"
+          key = {index}
+            onClick = {() => this.handleSongClick(song)}
+              onMouseEnter = {() => this.hoverOn(index)}
+                onMouseLeave = {() => this.hoverOff()}>
+
+        <td key='number'   > {this.displayIcon(song, index)} </td>
         <td key='title'    > {song.title} </td>
         <td key='duration' > {song.duration} </td>
 
