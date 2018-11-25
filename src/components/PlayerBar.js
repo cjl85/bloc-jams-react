@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
  class PlayerBar extends Component {
+   
    render() {
      return (
        <section className="player-bar">
@@ -33,7 +34,7 @@ import React, { Component } from 'react';
  <input
     type="range"
     className="volume-bar"
-    value={(this.props.currentVolume / this.props.length) || 0}
+    value={(this.props.currentVolume / this.props.length) || 1}
     max="100"
     min="0"
     step="1"

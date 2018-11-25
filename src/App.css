@@ -22,6 +22,49 @@
   color: #61dafb;
 }
 
+
+
+body {
+  background: #31698A;
+
+}
+
+h1 {
+  font-family: Georgia;
+  font-size: 4em;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+a {
+   font-family: sans-serif;
+   color: white;
+   padding: 14px 25px;
+   margin-top: 5px;
+   margin-right: 3px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   border: 2px solid black;
+}
+
+a:hover {
+   color: #ff3300;
+}
+
+.library {
+  flex-wrap: wrap;
+
+}
+
+img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 50%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
