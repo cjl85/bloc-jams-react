@@ -16,12 +16,13 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       currentVolume: 0,
-      length: album.songs[0].length,
+      volume: 0.5,
       isPlaying: false
     };
 
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
+    this.audioElement.volume = 0.5;
   }
 
   componentDidMount() {
@@ -118,6 +119,23 @@ componentWillUnmount() {
     return index + 1
   }
 
+  formatTime(time) {
+    if (time <= 0) {
+        return '-:--';
+    }
+
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+
+    let secondsString = seconds;
+
+    if (seconds < 10) {
+        secondsString = '0' + seconds;
+    }
+
+    return `${minutes} ':' ${secondsString}`;
+}
+
 
   hoverOn(index) {
     this.setState({ hoveredSong: index });
@@ -158,6 +176,7 @@ componentWillUnmount() {
 
         <td key='number'   > {this.displayIcon(song, index)} </td>
         <td key='title'    > {song.title} </td>
+        <td>{this.formatTime(song.duration)}</td>
         <td key='duration' > {song.duration} </td>
 
         </tr>
@@ -176,6 +195,7 @@ componentWillUnmount() {
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
+           formatTime={(time) => this.formatTime(time)}
          />
       </section>
     );
