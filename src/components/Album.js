@@ -133,7 +133,7 @@ componentWillUnmount() {
         secondsString = '0' + seconds;
     }
 
-    return `${minutes} ':' ${secondsString}`;
+    return `${minutes}:${secondsString}`;
 }
 
 
