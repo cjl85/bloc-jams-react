@@ -28,28 +28,41 @@ body {
 
 h1 {
   font-family: Georgia;
-  font-size: 3.5em;
+  font-size: 1.25em;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 a {
-   font-family: sans-serif;
-   color: white;
+   font-family: Georgia;
+   font-size: 1.25em;
+   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+   color: black;
    padding: 14px 25px;
    margin-top: 5px;
    margin-right: 3px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   border: 1px solid black;
 }
 
 a:hover {
    color: #A52A2A;
 }
 
+.hero-title {
+  text-align: center;
+}
+
 .library {
   flex-wrap: wrap;
+}
+
+.link {
+  margin-top: -55px;
+  text-align: right;
 }
 
 .point-description {
@@ -66,8 +79,9 @@ img {
   margin-right: auto;
   margin-top: 5px;
   margin-bottom: 5px;
-  width: auto;
+  width: 90%;
 }
+
 
 @keyframes App-logo-spin {
   from {

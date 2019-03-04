@@ -137,34 +137,34 @@ class Album extends Component {
 }
 
 
-  hoverOn(index) {
-    this.setState({ hoveredSong: index });
-    console.log('hovered');
+   hoverOn(index) {
+     this.setState({ hoveredSong: index });
+     console.log('hovered');
 
-  };
+   };
 
-  hoverOff() {
-    this.setState({ hoveredSong: false })
-  };
+   hoverOff() {
+     this.setState({ hoveredSong: false })
+   };
 
-  render() {
-    return (
-      <section className="album">
-      <section id="album-info">
-      <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
-      <div className="album-details">
-      <h1 id="album-title">{this.state.album.title}</h1>
-      <h2 className="artist">{this.state.album.artist}</h2>
-      <div id="release-info">{this.state.album.releaseInfo}</div>
-      </div>
-      </section>
-       <table id="song-list">
+   render() {
+     return (
+       <section className="album">
+       <section id="album-info">
+       <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+       <div className="album-details">
+       <h1 id="album-title">{this.state.album.title}</h1>
+       <h2 className="artist">{this.state.album.artist}</h2>
+       <div id="release-info">{this.state.album.releaseInfo}</div>
+       </div>
+       </section>
+        <table id="song-list">
 
        <colgroup>
         <col id="song-number-column" />
         <col id="song-title-column" />
         <col id="song-duration-column" />
-      </colgroup>
+       </colgroup>
 
       <tbody>
       {this.state.album.songs.map((song, index) =>
