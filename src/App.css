@@ -23,7 +23,7 @@
 }
 
 body {
-  background: #31698A;
+  background: linear-gradient(50deg, #31698A 50%, #174381 60%);
 }
 
 h1 {
@@ -42,10 +42,14 @@ a {
    color: black;
    padding: 14px 25px;
    margin-top: 5px;
-   margin-right: 3px;
+   margin-right: -18px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
+}
+
+#album-title {
+  text-align: center;
 }
 
 a:hover {
@@ -63,6 +67,13 @@ a:hover {
 .link {
   margin-top: -55px;
   text-align: right;
+}
+
+.player-bar {
+   width: 300px;
+   height: 120px;
+   margin: 0 auto;
+   background: #4c4e5a;
 }
 
 .point-description {
